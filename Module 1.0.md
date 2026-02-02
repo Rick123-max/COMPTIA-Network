@@ -128,10 +128,29 @@
 
 - Mesh networks provide excellent rudundancy due to routes via intermediary devices being available between locations if a link failure occurs.
 
+## Legacy Topologies
+- Most networks use the Star Topology due to its reliability and scalability
+- The following topologies are no longer in widespread use, but can still be found in legacy systems.
+### Bus Topology
+<img width="133" height="75" alt="image" src="https://github.com/user-attachments/assets/77b14cd8-deaf-4ba3-a1b7-ed57bdbff77a" />
 
+- Consists of a trunk cable with nodes inserted directly into the trunk or tapped into the trunk using offshoot (drop) cables.
+- Device called _Terminator_ is placed at both ends
+  - Purpose is to absorb signals, preventing them from reflecting back and forth
+- Signals travel from one node to all other nodes
+- Major downside is that 1 broken cable anywhere breaks the termination and prevents communication between all devices.
+  - This makes it difficult to isolate cabling problems
+### Ring Topology
+<img width="126" height="112" alt="image" src="https://github.com/user-attachments/assets/74f46a07-c1eb-4952-8030-dbfaaad71188" />
 
+- Connects neighboring nodes until they form a ring/circle.
+- Signals travel in one direction around the ring, with each device acting as a repeater.
+- The installation requires careful planning
+- A node malfunction/cable break can prevent signals from reaching nodes beyond the malfunction.
+- This can cause difficulties with problem isolation, requiring troubleshooter to check several physical locations
 
-
+# OSI Model Concepts
+## Open Systems Interconnection Model (OSI Model)
 
 
 
