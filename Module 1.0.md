@@ -151,9 +151,38 @@
 
 # OSI Model Concepts
 ## Open Systems Interconnection Model (OSI Model)
+<img width="1650" height="1075" alt="image" src="https://github.com/user-attachments/assets/67df95e4-bc0a-480e-8ef3-c51b5fca1e80" />
 
+- The International Organization for Standardization (ISO) developed OSI model to promote understanding of how network components work
+- This is done by seperating functions of hardware/software components into 7 different layers, each performing a different group of tasks
+- This model is not a standard or specification, rather it servs as a functional guideline for designing network protocols, software, and appliances and for troubleshooting networks
 
+## Data Encapsulation and Decapsulation
+- **Network Protocol**: set of rules for exchanging data in a structured format
+  - Had 2 principal functions:
+  - Addressing
+    - Describes where data messages should go
+    - At each OSI layer, there are different mechanisms for IDing nodes and rules for how to send/receive messages  
+  - Encapsulation
+    - Describes how datamessages should be packaged for transmission
+    - It acts like an envelope, with the distinction that each layer requires its own version of the envelope
+    - The protocol for each layer adds fields in a header to the payload data it recieves from an app or other protocol
+- Networks will involve the use of many different protocols from different layers of the OSI model.
+- At each layer, two nodes must run the same protocol to communicate
+  - The protocol at each layer communicates with the peer layer on the other node
+  - This communication between nodes at the same layer is described as a _same layer interaction_
+- To transmit/receive a communication, on each node, each layer provides services for the layer aboce and uses the services of the layer below, reffered to at _adjacent layer interaction_
+### Encapsulation and decapsulation
+<img width="1651" height="1054" alt="image" src="https://github.com/user-attachments/assets/2fdf1463-ddde-4fd6-a546-23486770a558" />
 
+- When a message is sent between nodes, it travels down the stack of the sending node, reaches the receiving node using transmission media, and then passes up the stack on the receiving node.
+- At each level (except physical), the sending node adds headers to the payload, forming a "chunk" of data called **prodocol data unit (PDU)**. This is known as **Encapsulation**
+- The receiving node performs the reverse process, known as **decapsulation**.
+  - It receives the stream of bits arriving at the Physical layer and decodes an Ethernet frame.
+  - It then extracts the IP packet from the frame and resolves the IP header, then the TCP and Application headers, eventually extracting HTTP application data for processing by a software program, such as a web browser or web server.
+
+## Layer 1 - Physical
+- 
 
 
 
