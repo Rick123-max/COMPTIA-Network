@@ -182,7 +182,56 @@
   - It then extracts the IP packet from the frame and resolves the IP header, then the TCP and Application headers, eventually extracting HTTP application data for processing by a software program, such as a web browser or web server.
 
 ## Layer 1 - Physical
-- 
+- Responsible for transmission and receipt of signals that represent bits of data.
+- Transmission media can be classified as:
+  - Cabled
+    - Physical signal conductor provided between two nodes
+    - Examples incude copper/fiber optic cables.
+    - Cabled media can be described as bounded media
+  - Wireless
+    - Uses free space between nodes such as Microwave radio
+    - Can also be described as unbounded media
+  - Physical layer specifies the following
+    - Physical topology
+      - Layout of nodes and links as established by transmission media
+      - Area of a large network is called a segment
+      - Networks are devided into segments to cope with physical restrictions of the network media used, to improve performance, or improve security.
+      - A segment is where all nodes share access to same media
+    - Physical interface
+      - Mechanical specifications for network medium
+      - For cabled media, this means how the cable is constructed, the interface/connector form factor, and the number and functions of pins in a connector.
+      - For Wireless media, it means radio transciever and nantenna specifications.
+    - Signaling
+      - Process of transmitting & receiving encoded data over network mediums.
+      - A modulation scheme describes how electrical, light, or radio signals represent bits
+      - Timing and synchronization schemes ensure senders and receivers can identify groups of signals as a chunk/frame of data.
+- Devices operating at Physical laer include
+  - **Transceiver**: Part of a network interface that sends/receives signals over network media
+  - **Repeater**: Device that amplifies electronic signal to extend max allowable distance for media types
+  - **Hub**: Multiport repeater, deployed as central point of connection for nodes
+  - **Media converter**: Device that converts one media signaling type to another
+
+## Layer 2 - Data Link
+- Responsible for transferring data between nodes on same logical segment.
+- Segment is where all nodes can send traffic to one another using hardware addresses, regardless of whether they share access to the same media.
+- Layer 2 segment might include multiple physical segments. Referred to as logical topology.
+- Local networks do not connect hosts directly with P2P or mesh links.
+- To reduce cabling and interface costs, each host is connected to a central node, such as a switch/WAP
+- Central node provides forwarding function, receiving communication from one node and sending to another
+- Each node interface must have a Data link layer address
+  - The addresses of interfaces w/in same layer 2 segment are described as local addresses or hardware addresses
+- Performs encapsulation function.
+- Organizes stream of bits arriving from Physical layer into structured units called **Frames**.
+  - Each frame contains a Network layer packet as its payload.
+- Layer adds control info to payload in form of header fields.
+  - These include source/destination hardware addresses, plus basic error check to test if frame was received intact.
+  <img width="2424" height="1832" alt="data_link" src="https://github.com/user-attachments/assets/f3f33ffd-27ae-48e7-8880-c5768ba13e86" />
+
+- Devices that operate at the Data Link layer include the following:
+  - **Network adapter**/**network interface card (NIC)**: A NIC joins an end system host to network media (cabling or wireless) and enables it to communicate over the network by assembling and disassembling frames.
+  - **Bridge**: A bridge is a type of intermediate system that joins physical network segments while minimizing the performance reduction of having more nodes on the same network. A bridge has multiple ports, each of which functions as a network interface.
+  - **Switch**: An advanced type of bridge with many ports. A switch creates links between large numbers of nodes more efficiently.
+  - **Wireless access point (AP)** An AP allows nodes with wireless network cards to communicate and creates a bridge between wireless networks and wired ones.
 
 
 
